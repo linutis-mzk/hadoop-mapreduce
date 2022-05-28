@@ -1,0 +1,34 @@
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+public class DateTimeConverter {
+
+    private static String baseDateDays = "2444467"; + x
+    private static String baseDate = "15-08-1980";
+
+    public DateTimeConverter(){
+        
+    }
+    private long getDaysDifference(String in_date){
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        String inputString1 = baseDate;
+        String inputString2 = in_date;
+
+       
+        LocalDateTime date1 = LocalDateTime.parse(inputString1, dtf);
+        LocalDateTime date2 = LocalDateTime.parse(inputString2, dtf);
+        long daysBetween = Duration.between(date1, date2).toDays();
+        System.out.println ("Days: " + daysBetween);
+        return daysBetween;
+    }
+
+    public String convertToDays(String date){
+        long daysDiff = this.getDaysDifference(date);
+        
+    }
+    public String convertFromDays(String date){
+
+    }
+}
+
